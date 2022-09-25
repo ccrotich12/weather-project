@@ -1,0 +1,42 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.search {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.city-card {
+  position: absolute;
+  margin-top: 20px;
+  padding: 30px;
+  text-align: left;
+  border-radius: 4%;
+  left: 100px;
+  transition: all 200ms ease-in-out;
+}
+.city-card:hover {
+  background: #f4f1e6;
+}
+.card-text {
+  font-size: 30px;
+}
+.city-temp {
+  font-size: 30px;
+}
+.weekly-container {
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+ul {
+  list-style-type: none;
+}
+div.container.stats {
+  display: block;
+  position: relative;
+  left: 50px;
+}
+.class {
+  display: inline;
+}

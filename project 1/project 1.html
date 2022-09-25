@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 2 Hmwk</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container" id="search-form">
+      <input type="text" class="search" placeholder="Search city" id="search-text-input"/><input type="button" value="Search" class="search"/>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="city-card" style="width: 500px;">
+              <div class="card-body">
+                <h2 class="city-title" id="location"></h2>
+                <h3 class="city-date mb-2 text-muted" id="city-time">Thu</h3>
+                <h5 class="city-subtitle text-muted" id="temp-description"></h5>
+                <p class="card-text">🌤️</p>
+                <p class="city-temp">
+                  <span class="temperature" id="temperatureElement"><strong></strong></span>
+                  <span class="units">
+                     <div class="container-stats">
+                      <ul class="text-muted">
+                        <li id="wind"> Wind: km/h </li>
+                        <li id="humidity"> Humidity: % </li>
+                      </ul>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="weekly-container">
+            <div class="col">
+              <div class="weekly-forecast-card">
+                <div class="card" style="width: 300px;">
+                  <div class="card-body">
+                    <h5 class="weekly-title">Fri</h5>
+                    <h6 class="weekly-subtitle mb-2 text-muted">
+                      <strong>111°F | 86°C</strong>
+                    </h6>
+                    <p class="card-text">☀️</p>
+                  </div>
+                </div>
+              </div>
+              <div class="weekly-forecast-card">
+                <div class="card" style="width: 300px;">
+                  <div class="card-body">
+                    <h5 class="weekly-title">Sat</h5>
+                    <h6 class="weekly-subtitle mb-2 text-muted">
+                      <strong>109°F | 84°C</strong>
+                    </h6>
+                    <p class="card-text">☀️</p>
+                  </div>
+                </div>
+              </div>
+              <div class="weekly-forecast-card">
+                <div class="card" style="width: 300px;">
+                  <div class="card-body">
+                    <h5 class="weekly-title">Sun</h5>
+                    <h6 class="weekly-subtitle mb-2 text-muted">
+                      <strong>111°F | 86°C</strong>
+                    </h6>
+                    <p class="card-text">🌤️</p>
+                  </div>
+                </div>
+              </div>
+              <div class="weekly-forecast-card">
+                  <div class="card" style="width: 300px;">
+                    <div class="card-body">
+                      <h5 class="weekly-title">Mon</h5>
+                      <h6 class="weekly-subtitle mb-2 text-muted">
+                        <strong>98°F | 82°C</strong>
+                      </h6>
+                      <p class="card-text">⛅</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="weekly-forecast-card">
+                    <div class="card" style="width: 300px;">
+                      <div class="card-body">
+                        <h5 class="weekly-title">Tue</h5>
+                        <h6 class="weekly-subtitle mb-2 text-muted">
+                          <strong>98°F | 82°C</strong>
+                        </h6>
+                        <p class="card-text">🌧️</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    <script src="src/index.js"></script>
+  </body>
+</html>
