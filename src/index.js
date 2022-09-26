@@ -58,11 +58,11 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
+  let city = document.querySelector("#search-city").value;
   search(city);
 }
 
-let searchForm = document.querySelector("#search-text-input");
+let searchForm = document.querySelector("#search-city");
 
 searchForm.addEventListener("submit", handleSubmit);
 

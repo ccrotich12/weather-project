@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Week 2 Hmwk</title>
+    <title>Plus Project</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="60" />
     <link rel="stylesheet" href="src/styles.css" />
     <link
       rel="stylesheet"
@@ -15,99 +15,63 @@
   </head>
 
   <body>
-    <div class="container" id="search-form">
-      <input type="text" class="search" placeholder="Search city" id="search-text-input"/><input type="button" value="Search" class="search"/>
-      <div class="container">
+    <div class="container shadow">
+      <div class="wrapper">
         <div class="row">
-          <div class="col">
-            <div class="city-card" style="width: 500px;">
+          <div class="col-md-11">
+            <form class="form-inline" id="search-city-form">
+              <input
+                type="search"
+                class="shadow-md"
+                placeholder="Enter a city"
+                id="search-city"
+              />
+              <input
+                type="submit"
+                value="Search"
+                class="shadow-md"
+                id="submit-city"
+              />
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 text-justify-left">
+            <div class="city-card" style="width: 500px">
               <div class="card-body">
                 <h2 class="city-title" id="location"></h2>
                 <h3 class="city-date mb-2 text-muted" id="city-time">Thu</h3>
                 <h5 class="city-subtitle text-muted" id="temp-description"></h5>
                 <p class="card-text">🌤️</p>
                 <p class="city-temp">
-                  <span class="temperature" id="temperatureElement"><strong></strong></span>
+                  <span class="temperature" id="temperatureElement"
+                    ><strong></strong
+                  ></span>
                   <span class="units">
-                     <div class="container-stats">
+                    <div class="container-stats">
                       <ul class="text-muted">
-                        <li id="wind"> Wind: km/h </li>
-                        <li id="humidity"> Humidity: % </li>
+                        <li id="wind">Wind: km/h</li>
+                        <li id="humidity">Humidity: %</li>
                       </ul>
                     </div>
+                  </span>
+                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="weekly-container">
-            <div class="col">
-              <div class="weekly-forecast-card">
-                <div class="card" style="width: 300px;">
-                  <div class="card-body">
-                    <h5 class="weekly-title">Fri</h5>
-                    <h6 class="weekly-subtitle mb-2 text-muted">
-                      <strong>111°F | 86°C</strong>
-                    </h6>
-                    <p class="card-text">☀️</p>
-                  </div>
-                </div>
-              </div>
-              <div class="weekly-forecast-card">
-                <div class="card" style="width: 300px;">
-                  <div class="card-body">
-                    <h5 class="weekly-title">Sat</h5>
-                    <h6 class="weekly-subtitle mb-2 text-muted">
-                      <strong>109°F | 84°C</strong>
-                    </h6>
-                    <p class="card-text">☀️</p>
-                  </div>
-                </div>
-              </div>
-              <div class="weekly-forecast-card">
-                <div class="card" style="width: 300px;">
-                  <div class="card-body">
-                    <h5 class="weekly-title">Sun</h5>
-                    <h6 class="weekly-subtitle mb-2 text-muted">
-                      <strong>111°F | 86°C</strong>
-                    </h6>
-                    <p class="card-text">🌤️</p>
-                  </div>
-                </div>
-              </div>
-              <div class="weekly-forecast-card">
-                  <div class="card" style="width: 300px;">
-                    <div class="card-body">
-                      <h5 class="weekly-title">Mon</h5>
-                      <h6 class="weekly-subtitle mb-2 text-muted">
-                        <strong>98°F | 82°C</strong>
-                      </h6>
-                      <p class="card-text">⛅</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="weekly-forecast-card">
-                    <div class="card" style="width: 300px;">
-                      <div class="card-body">
-                        <h5 class="weekly-title">Tue</h5>
-                        <h6 class="weekly-subtitle mb-2 text-muted">
-                          <strong>98°F | 82°C</strong>
-                        </h6>
-                        <p class="card-text">🌧️</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-
-
-
-
+          <div class="col-md-5 text-center"
+           <div class="weekly-container">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
- <div></div><a href="https://github.com/ccrotich12/weather-project">Open-source code</a> by Chelcy Rotich</div>
+    <footer>
+      <a href="https://github.com/ccrotich12/weather-project"
+        >Open-source code</a
+      >
+      by Chelcy Rochich
+    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>
