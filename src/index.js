@@ -29,10 +29,10 @@ console.log(response.data);
 function showTemp(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#temperatureElement");
+  let degreeUnits = document.querySelector("#degreeUnits");
   let description = document.querySelector("#temp-description");
 
-  temperatureElement.innerHTML = `${temperature}`;
+  degreeUnits.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
 
   console.log(response.data.wind.speed);

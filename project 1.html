@@ -38,12 +38,15 @@
         <div class="row">
           <div class="col-5">
             <div class="city-card">
-              <h2 class="city-title" id="location">New York</h2>
-              <h4 class="city-date text-muted" id="city-time">Thu, 3:45 </h4>
-              <h5 class="city-subtitle text-muted" id="temp-description">Clear</h5>
-              <p class="card-text">☀️</p>
-              <p class="city-temp">12
-                <span class="temperature" id="temperatureElement">°C |°F</span>
+              <div class="overview">
+                <h2 class="city-title" id="location">New York</h2>
+                <h4 class="city-date text-muted" id="city-time">Thu, 3:45 </h4>
+                <h5 class="city-subtitle text-muted" id="temp-description">Clear</h5>
+              </div>
+              <p class="city-temp">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png">
+                <strong>12</strong>
+                <span class="temperature" id="degreeUnits">°C |<a href="#">°F</a></span>
               </p>
             </div>
           </div>
