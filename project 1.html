@@ -15,62 +15,61 @@
   </head>
 
   <body>
-    <div class="container shadow">
-      <div class="wrapper">
-        <div class="row">
-          <div class="col-md-11">
-            <form class="form-inline" id="search-city-form">
+    <div class="container">
+      <div class="weather-app">
+        <form class="form-inline" id="search-city-form"></form>
+          <div class="row">
+            <div class="col-12">
               <input
                 type="search"
                 class="shadow-md"
                 placeholder="Enter a city"
-                id="search-city"
+                id="search-input"
               />
               <input
                 type="submit"
                 value="Search"
-                class="shadow-md"
+                class="btn btn-primary"
                 id="submit-city"
               />
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-7 text-justify-left">
-            <div class="city-card" style="width: 500px">
-              <div class="card-body">
-                <h2 class="city-title" id="location"></h2>
-                <h3 class="city-date mb-2 text-muted" id="city-time">Thu</h3>
-                <h5 class="city-subtitle text-muted" id="temp-description"></h5>
-                <p class="card-text">🌤️</p>
-                <p class="city-temp">
-                  <span class="temperature" id="temperatureElement"
-                    ><strong></strong
-                  ></span>
-                  <span class="units">
-                    <div class="container-stats">
-                      <ul class="text-muted">
-                        <li id="wind">Wind: km/h</li>
-                        <li id="humidity">Humidity: %</li>
-                      </ul>
-                    </div>
-                  </span>
-                </p>
-              </div>
             </div>
           </div>
-          <div class="col-md-5 text-center"
-           <div class="weekly-container">
+        </form>
+        <div class="row">
+          <div class="col-5">
+            <div class="city-card">
+              <h2 class="city-title" id="location">New York</h2>
+              <h4 class="city-date text-muted" id="city-time">Thu, 3:45 </h4>
+              <h5 class="city-subtitle text-muted" id="temp-description">Clear</h5>
+              <p class="card-text">☀️</p>
+              <p class="city-temp">12
+                <span class="temperature" id="temperatureElement">°C |°F</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-7 misc">
+            <div class="row container-stats">
+              <ul>
+                <li id="wind">Wind:<span class="accent"> 90 km/h</span></li>
+                <li id="humidity">Humidity:<span class="accent"> 60%</span></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <footer>
-      <a href="https://github.com/ccrotich12/weather-project"
+      <a href="https://github.com/ccrotich12/weather-project"target:"_blank"
         >Open-source code</a
       >
-      by Chelcy Rochich
+      by Chelcy Rotich
     </footer>
     <script src="src/index.js"></script>
   </body>
