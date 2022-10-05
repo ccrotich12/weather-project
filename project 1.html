@@ -17,11 +17,12 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form class="form-inline" id="search-form"></form>
+        <form class="form-inline" id="search-form">
           <div class="row">
             <div class="col-12">
               <input
                 type="search"
+                value=""
                 class="shadow-md"
                 placeholder="Enter a city"
                 id="city-input"
@@ -32,12 +33,6 @@
                 class="btn btn-primary"
                 id="submit-city"
               />
-              <input
-                type="submit"
-                value="Current"
-                class="btn btn-primary"
-                id="your-location"
-                />
             </div>
           </div>
         </form>
@@ -45,14 +40,14 @@
           <div class="col-5">
             <div class="city-card">
               <div class="overview">
-                <h2 class="city-title" id="city"></h2>
+                <h2 id="city"></h2>
                 <h4 class="city-date text-muted" id="date">Thu </h4>
-                <h5 class="city-subtitle text-muted" id="description"></h5>
+                <h5 class="text-muted" id="description"></h5>
               </div>
               <p class="city-temp">
                 <img src="#" alt="#" id="icon">
                 <strong id="temperature"></strong>
-                <span class="tempUnits" id="degreeUnits">°C |<a href="#">°F</a></span>
+                <span class="tempUnits" id="degreeUnits">°C |<a href="#" id="fahrenheit-link">°F</a></span>
               </p>
             </div>
           </div>
