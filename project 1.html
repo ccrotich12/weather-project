@@ -17,14 +17,14 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form class="form-inline" id="search-city-form"></form>
+        <form class="form-inline" id="search-form"></form>
           <div class="row">
             <div class="col-12">
               <input
                 type="search"
                 class="shadow-md"
                 placeholder="Enter a city"
-                id="search-input"
+                id="city-input"
               />
               <input
                 type="submit"
@@ -32,6 +32,12 @@
                 class="btn btn-primary"
                 id="submit-city"
               />
+              <input
+                type="submit"
+                value="Current"
+                class="btn btn-primary"
+                id="your-location"
+                />
             </div>
           </div>
         </form>
@@ -39,22 +45,22 @@
           <div class="col-5">
             <div class="city-card">
               <div class="overview">
-                <h2 class="city-title" id="location">New York</h2>
-                <h4 class="city-date text-muted" id="city-time">Thu, 3:45 </h4>
-                <h5 class="city-subtitle text-muted" id="temp-description">Clear</h5>
+                <h2 class="city-title" id="city"></h2>
+                <h4 class="city-date text-muted" id="date">Thu </h4>
+                <h5 class="city-subtitle text-muted" id="description"></h5>
               </div>
               <p class="city-temp">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png">
-                <strong>12</strong>
-                <span class="temperature" id="degreeUnits">°C |<a href="#">°F</a></span>
+                <img src="#" alt="#" id="icon">
+                <strong id="temperature"></strong>
+                <span class="tempUnits" id="degreeUnits">°C |<a href="#">°F</a></span>
               </p>
             </div>
           </div>
           <div class="col-7 misc">
             <div class="row container-stats">
               <ul>
-                <li id="wind">Wind:<span class="accent"> 90 km/h</span></li>
-                <li id="humidity">Humidity:<span class="accent"> 60%</span></li>
+                <li><strong>Wind: <span class="accent" id="wind"></strong></span> km/h</li>
+                <li><strong>Humidity: <span class="accent" id="humidity"></strong></span>%</li>
               </ul>
             </div>
             <div class="row">

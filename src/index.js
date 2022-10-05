@@ -1,12 +1,11 @@
-function formatDate(date) {
-  let minutes = now.getMinutes();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let hours = now.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
+
   let days = [
     "Sunday",
     "Monday",
@@ -16,55 +15,42 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
-
-  return `${day} ${hours}:${minutes}`;
+  let day = days[date.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
 
-let currentDate = document.querySelector("#city-time");
-let now = new Date();
-currentDate.innerHTML = formatDate(now);
-
-console.log(response.data);
-function showTemp(response) {
-  console.log(response.data);
-  let temperature = Math.round(response.data.main.temp);
-  let degreeUnits = document.querySelector("#degreeUnits");
-  let description = document.querySelector("#temp-description");
-
-  degreeUnits.innerHTML = `${temperature}`;
-  description.innerHTML = response.data.weather[0].description;
-
-  console.log(response.data.wind.speed);
-  let wind = Math.round(response.data.wind.speed);
-  let windElement = document.querySelector("#wind");
-
-  windElement.innerHTML = `Wind: ${wind} km/h`;
-
-  document.querySelector("#location").innerHTML = response.data.name;
-
-  console.log(response.data.main.humidity);
-  let humidity = Math.round(response.data.main.humidity);
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-
-  humidityElement.innerHTML = `Humidity: ${humidity}%`;
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = Math.round(response.data.main.humidity);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function search(city) {
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}`).then(showTemp);
-}
-
-function handleSubmit(event) {
+function search(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-city").value;
-  search(city);
+  let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement.value);
 }
 
-let searchForm = document.querySelector("#search-city");
+let apiKey = "667d9f573c8af4c33457be5d561a9148";
+let designatedCity = "Kobe";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${designatedCity}&appid=${apiKey}&units=metric`;
 
-searchForm.addEventListener("submit", handleSubmit);
+axios.get(apiUrl).then(displayTemperature);
 
-search("New York");
-//////////////////////
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);

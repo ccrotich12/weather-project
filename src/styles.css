@@ -1,5 +1,5 @@
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
   margin: 50px;
@@ -19,7 +19,7 @@ form {
   display: block;
   margin: 0 auto;
 }
-#search-input {
+#city-input {
   background: #e2f2f4;
   box-shadow: #f4f1e6;
   border: none;
@@ -31,7 +31,13 @@ form {
 #submit-city {
   border: none;
   background: teal;
-  height: 50px;
+  height: 40px;
+  margin: 0 10px;
+}
+#your-location {
+  border: none;
+  background: #00c0c0;
+  height: 40px;
 }
 .city-card {
   margin-top: 20px;
@@ -45,9 +51,13 @@ form {
 h2,
 h4,
 h5,
-p {
+p,
+li {
   color: gray;
   font-family: Arial, Helvetica, sans-serif;
+}
+h5::first-letter {
+  text-transform: capitalize;
 }
 p {
   font-size: 32px;
@@ -69,7 +79,7 @@ p {
   line-height: 1;
   font-size: 64px;
 }
-.city-temp .temperature {
+.city-temp .tempUnits {
   position: relative;
   font-size: 20px;
   top: -34px;
@@ -85,7 +95,13 @@ ul {
 div.container-stats {
   display: block;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 10px 0;
+}
+.misc {
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 6px;
+  transition: all 200ms ease-in-out;
 }
 .misc:hover {
   background: #e2f2f4;
