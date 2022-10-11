@@ -122,9 +122,11 @@ div.container-stats {
 .overview {
   margin-bottom: 20px;
 }
+
 .accent {
   color: #f87979;
 }
+
 footer {
   text-align: center;
 }
@@ -133,6 +135,26 @@ footer {
   color: black;
   cursor: default;
 }
+
 .tempUnits .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temp {
+  font-size: 13px;
 }
