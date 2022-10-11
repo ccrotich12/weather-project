@@ -118,3 +118,11 @@ div.container-stats {
 footer {
   text-align: center;
 }
+
+.tempUnits .active {
+  color: black;
+  cursor: default;
+}
+.tempUnits .active:hover {
+  text-decoration: none;
+}
