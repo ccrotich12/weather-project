@@ -124,13 +124,19 @@ function displayCelsiusTemperature(event) {
 }
 
 function showPosition(position) {
-  let h1 = document.querySelector("h1");
-  console.log(position);
-  console.log(position.coords.longitude);
-  console.log(position.coords.latitude);
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let units = "metric";
+  let apiKey = "667d9f573c8af4c33457be5d561a9148";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
-function getCurrentPosition() {
+function getCurrentPosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
@@ -147,5 +153,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let currentLocationButton = document.querySelector("#your-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+let palm;
 
 search("Mombasa");
