@@ -13,7 +13,9 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
@@ -29,12 +31,25 @@
                 class="shadow-md"
                 placeholder="Enter a city"
                 id="city-input"
+                autocomplete="off"
               />
               <input
                 type="submit"
                 value="Search"
                 class="btn btn-primary"
                 id="submit-city"
+              />
+              <input
+                type="submit"
+                value="📍"
+                class="btn btn-primary"
+                id="your-location"
+              />
+                <input
+                type="submit"
+                value="🌴"
+                class="btn btn-primary"
+                id="palm"
               />
             </div>
           </div>
@@ -51,7 +66,7 @@
                 <img src="#" alt="#" id="icon">
                 <strong id="temperature"></strong>
                 <span class="tempUnits" id="degreeUnits">
-                  <a href="#" id="celsius-link" class="active">°C |</a>
+                  <a href="#" id="celsius-link" class="active">°C </a>|
                   <a href="#" id="fahrenheit-link">°F</a></span>
               </p>
             </div>
@@ -59,9 +74,11 @@
           <div class="col-7 misc">
             <div class="row container-stats">
               <ul>
+                <li><strong>Feels Like: <span class="accent" id="feels"></strong></span>°C</li>
                 <li><strong>Wind: <span class="accent" id="wind"></strong></span> km/h</li>
                 <li><strong>Humidity: <span class="accent" id="humidity"></strong></span>%</li>
               </ul>
+              <hr />
             </div>
             <div class="weather-forecast" id="forecast">
               <div class="row">
@@ -74,7 +91,7 @@
     <footer>
       <a href="https://github.com/ccrotich12/weather-project" target="_blank"
         >Open-source code</a
-      >
+      > & hosted on <a href="https://www.netlify.com" target="_blank">Netlify</a>
       by Chelcy Rotich
     </footer>
     <script src="src/index.js"></script>

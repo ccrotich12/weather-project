@@ -38,7 +38,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-  <div class="col-2">
+  <div class="col-2 forecast-css">
     <div class="weather-forecast-date">
       ${formatDay(forecastDay.dt)}</div>
        <img src="https://openweathermap.org/img/wn/${
@@ -74,6 +74,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let feelsElement = document.querySelector("#feels");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -88,6 +89,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  feelsElement.innerHTML = Math.round(response.data.main.feels_like);
 
   getForecast(response.data.coord);
 }
@@ -120,6 +122,18 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
   tempConversionElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+function showPosition(position) {
+  let h1 = document.querySelector("h1");
+  console.log(position);
+  console.log(position.coords.longitude);
+  console.log(position.coords.latitude);
+}
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -130,5 +144,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let currentLocationButton = document.querySelector("#your-location");
+currentLocationButton.addEventListener("click", getCurrentPosition);
 
 search("Mombasa");
