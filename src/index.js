@@ -154,6 +154,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let currentLocationButton = document.querySelector("#your-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
-let palm;
-
 search("Mombasa");
